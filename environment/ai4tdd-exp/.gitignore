@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+venv/
+experiment_*
+logs/
+.idea

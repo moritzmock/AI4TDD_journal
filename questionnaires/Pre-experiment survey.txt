@@ -1,0 +1,70 @@
+Pre-experiment survey
+
+This is a pre-experiment survey that allows us to Dne tune the experiment protocol based on the
+participants' background and to contact you to inform you about the experiment results.
+* Gibt eine erforderliche Frage an
+
+Experience as developer
+
+1. How long have you been a developer? *
+Select only one
+- Less than 1 year
+- Between 1 to 3 years
+- More than 3 years
+
+2. Have you ever programmed with TDD? *
+Select only one
+- No
+- Yes, less than 1 year
+- Between 1 and 3 years
+- More than 3 years
+
+3. How would you rate your skills with TDD? *
+Select only one
+- Beginner
+- Intermediate
+- Advanced
+
+4. Any further comment
+
+Preference
+
+5. What programming language do you prefer for the experiment? *
+
+6. How many years of experience do you have with your chosen programming language? *
+Select only one
+- Less than 1 year
+- Between 1 to 3 years
+- More than 3 years
+
+7. When do you prefer to participate in the experiment? *
+Select only one
+- 28th June
+- 16th July
+- Other (specify below)
+
+8. If you are not available on the proposed days, please indicate your availability
+
+Demographic
+This section will be used only to contact you for the experiment and the results' outcome. The experiment study is fully anonymised in respect of GDPR. Only the email address is required.
+
+9. Email Address *
+
+10. Role
+Select only one
+- Junior developer
+- Senior developer
+- Junior tester
+- Senior tester
+- Development team manager
+- Sonstiges:
+
+11. Full name
+
+12. Affiliation
+
+13. Age
+Select only one
+- Less than 20
+- Between 20 and 30
+- More than 30
