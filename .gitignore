@@ -1,0 +1,5 @@
+.idea
+.DS_Store
+.Rproj.user
+plots
+/environment/env/

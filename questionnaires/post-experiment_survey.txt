@@ -1,0 +1,65 @@
+Post-experiment survey
+
+AI4TDD experiment
+The goal of this experiment is to develop in Python the following features:
+The class TextFormatter should have three functions.
+The 7rst should be called setLineWidth and receive the length of the lines that should be returned by the
+other functions.
+The second function receives a single word and returns the word in the center.
+The third function receives two words and returns the line with the words spread.
+You are free to make assumptions regarding the details of the implementation.
+To develop it, you will use Test Driven Development and, in particular, assertion 4rst.
+This means that you incrementally develop a test method by test case, like
+Step 1
+import unittest
+class Tester(unittest.TestCase):
+def myTest(self):
+self.assertEqual(ExpectedOutput1, classToCall.callToMethodUnderTest(Input1))
+Step 2
+import unittest
+class Tester(unittest.TestCase):
+def myTest(self):
+classToCall = ClassToCall()
+self.assertEqual(ExpectedOutput1, classToCall.callToMethodUnderTest(Input1))
+Please report the measures below regarding your work.
+You are also free to leave the experiment at any moment.
+* Indicates a required question
+
+1. What is your ID in the experiment? *
+
+2. Which scenario did you work with? *
+Select only one
+- Working alone
+- Interacting with ChatGPT as tester
+
+3. How long did it take to complete the exercise? *
+
+4. How did you find the exercise? *
+Select only one
+- Easy with the knowledge I have
+- Fine with the knowledge I have
+- Hard with the knowledge I have
+
+5. For how long have you worked with TDD? *
+Select only one
+- Less than 1 year
+- Between 1 and 3 years
+- More than 3 years
+
+6. How long have you been a python developer? *
+Select only one
+- Less than 1 years
+- Between 1 and 3 years
+- More than 3 years
+
+7. What is you current role in development? *
+Select only one
+- Software developer/engineer or similar role
+- Data scientist/engineer or similar role
+- Technical leader/manager or similar role
+- Other:
+
+8. Would you like to comment something about the experiment?
+
+9. Upload here your test and code *
+
