@@ -59,7 +59,7 @@ P14 = load_text_formatter('P14/P14/experiment_8_5.py', 'experiment')
 P15 = load_text_formatter('P15/P15/experiment.py', 'experiment')
 P16 = load_text_formatter('P16/P16/experiment.py', 'experiment')
 
-
+# Example implementation
 class TextFormatter:
     def setLineWidth(self, length):
         self.length = length
@@ -142,7 +142,7 @@ def generate_tests(name, formatter_class, method_tests, global_setup=None):
     return test_classes
 
 
-def generateMethods(func_1, func_2, setLineWidth, array = False):
+def testcase_to_be_generated(func_1, func_2, setLineWidth, array = False):
     return {
         f"{func_1}": [
             {"args": ["word"], "expected": "   word   ", "setup": {"lineWidth": 10, "widthMethod": f"{setLineWidth}"}},
@@ -167,88 +167,88 @@ if __name__ == "__main__":
     suite = unittest.TestSuite()
     '''
     # dummy test
-    test_classes = generate_tests("dummy", TextFormatter, generateMethods("singleWord", "twoWords_version_1", "setLineWidth"))
+    test_classes = generate_tests("dummy", TextFormatter, testcase_to_be_generated("singleWord", "twoWords_version_1", "setLineWidth"))
     for cls in test_classes:
         suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
     '''
 
     # F1
-    #test_classes = generate_tests("F1", F1, generateMethods("center_text", "spread_words", "__init__", True))
+    #test_classes = generate_tests("F1", F1, testcase_to_be_generated("center_text", "spread_words", "__init__", True))
     #for cls in test_classes:
     #    suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
     # P1
-    #test_classes = generate_tests("P1", P1, generateMethods("centerWord", "spreadWords", "setLineWidth", False))
+    #test_classes = generate_tests("P1", P1, testcase_to_be_generated("centerWord", "spreadWords", "setLineWidth", False))
     #for cls in test_classes:
     #   suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
     # P2
-    #test_classes = generate_tests("P2", P2, generateMethods("wordCenter", "wordSpread", "setLineWidth", False))
+    #test_classes = generate_tests("P2", P2, testcase_to_be_generated("wordCenter", "wordSpread", "setLineWidth", False))
     #for cls in test_classes:
     #   suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
     # P3
-    #test_classes = generate_tests("P3", P3, generateMethods("singleWord", "twoWords", "setLineWidth", False))
+    #test_classes = generate_tests("P3", P3, testcase_to_be_generated("singleWord", "twoWords", "setLineWidth", False))
     #for cls in test_classes:
     #   suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
     # P4
-    #test_classes = generate_tests("P4", P4, generateMethods("center", "spread", "setLineWidth", False))
+    #test_classes = generate_tests("P4", P4, testcase_to_be_generated("center", "spread", "setLineWidth", False))
     #for cls in test_classes:
     #   suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
     # P5
-    #test_classes = generate_tests("P5", P5, generateMethods("centerWord", "spreadWords", "setlinewidth", False))
+    #test_classes = generate_tests("P5", P5, testcase_to_be_generated("centerWord", "spreadWords", "setlinewidth", False))
     #for cls in test_classes:
     #   suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
     # P6
-    #test_classes = generate_tests("P6", P6, generateMethods("setCenterWord", "setCenterWords", "setLineWidth", False))
+    #test_classes = generate_tests("P6", P6, testcase_to_be_generated("setCenterWord", "setCenterWords", "setLineWidth", False))
     #for cls in test_classes:
     #   suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
     # P7
-    #test_classes = generate_tests("P7", P7, generateMethods("get_word_in_center", "space_center", "set_line_width", False))
+    #test_classes = generate_tests("P7", P7, testcase_to_be_generated("get_word_in_center", "space_center", "set_line_width", False))
     #for cls in test_classes:
     #   suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
     # P8
-    #test_classes = generate_tests("P8", P8, generateMethods("centerWord", "spreadWord", "setLineWidth", False))
+    #test_classes = generate_tests("P8", P8, testcase_to_be_generated("centerWord", "spreadWord", "setLineWidth", False))
     #for cls in test_classes:
     #    suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
     # P9
-    #test_classes = generate_tests("P9", P9, generateMethods("centerWord", "spreadWords", "setLineWidth", False))
+    #test_classes = generate_tests("P9", P9, testcase_to_be_generated("centerWord", "spreadWords", "setLineWidth", False))
     #for cls in test_classes:
     #    suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
     # P10
-    #test_classes = generate_tests("P10", P10, generateMethods("centerWord", "spreadWords", "setLineWidth", False))
+    #test_classes = generate_tests("P10", P10, testcase_to_be_generated("centerWord", "spreadWords", "setLineWidth", False))
     #for cls in test_classes:
     #   suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
     # P12
-    #test_classes = generate_tests("P12", P12, generateMethods("centerWord", "equalSpread", "__init__", False))
+    #test_classes = generate_tests("P12", P12, testcase_to_be_generated("centerWord", "equalSpread", "__init__", False))
     #for cls in test_classes:
     #    suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
     # P13
-    #test_classes = generate_tests("P13", P13, generateMethods("centerWordInLine", "splitWordsInLine", "setLineWidth", False))
+    #test_classes = generate_tests("P13", P13, testcase_to_be_generated("centerWordInLine", "splitWordsInLine", "setLineWidth", False))
     #for cls in test_classes:
     #    suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
     # P14
-    #test_classes = generate_tests("P14", P14, generateMethods("alignCenter", "alignSpread", "setLineWidth", False))
+    #test_classes = generate_tests("P14", P14, testcase_to_be_generated("alignCenter", "alignSpread", "setLineWidth", False))
     #for cls in test_classes:
     #    suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
     # P15
-    #test_classes = generate_tests("P15", P15, generateMethods("getWordInCenterOfLine", "getWordsInTheEdgesOfLine", "setLineWidth", False))
+    #test_classes = generate_tests("P15", P15, testcase_to_be_generated("getWordInCenterOfLine", "getWordsInTheEdgesOfLine", "setLineWidth", False))
     #for cls in test_classes:
     #    suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
     # P16
-    #test_classes = generate_tests("P16", P16, generateMethods("findCentralWord", "spreadWords", "setLineWidth", False))
+    #test_classes = generate_tests("P16", P16, testcase_to_be_generated("findCentralWord", "spreadWords", "setLineWidth", False))
     #for cls in test_classes:
     #    suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
