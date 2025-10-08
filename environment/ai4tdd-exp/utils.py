@@ -4,20 +4,23 @@ import fnmatch
 import argparse
 import ast
 
-def how_many_to_skip(original_file, multiplier=2):
+def how_many_to_skip(original_file, log_path=None, multiplier=2):
     file_split = original_file.split("/")
     path = "/".join(file_split[0:len(file_split) - 1])
     path = "." if path == "" else path
     original_file = file_split[-1]
-    files = os.listdir(path)
-    search_file = original_file.replace(".py", "") + "_*.py"
-    matching_files = [file for file in files if fnmatch.fnmatch(file, search_file)and len(file.replace(original_file.replace(".py", ""), "").split("_")) == multiplier +1]
+    files = os.listdir(path if log_path is None else log_path)
+
+    search_patterns = [original_file.replace(".py", "") + "_*.py", original_file.replace(".py", "") + "_*_*.py"]
+
+    matching_files = [
+        f for f in files
+        if any(fnmatch.fnmatch(f, pat) for pat in search_patterns)
+    ]
     pattern = re.compile(r'\d+')
 
     numbers_array = [int(pattern.search(file).group()) for file in matching_files if pattern.search(file)]
-
     files_to_skip = max(numbers_array) if len(numbers_array) > 0 else 0
-
     return files_to_skip
 
 
@@ -37,6 +40,16 @@ def read_file(path):
         with open(path, 'r') as file:
             contents = file.read()
             return contents
+
+
+def write_file(path, content):
+    try:
+        with open(path, 'w') as file:
+            file.write(content)
+        return True
+    except Exception as e:
+        print(f"Error writing to file: {e}")
+        return False
 
 def reshuffle_code(code, path=None, keep_production_code=True):
     classes = extract_classes(code)

@@ -22,9 +22,9 @@ TEST_PASSED = "TEST_PASSED"
 
 class TestCodeAIHandler(LogCollector, AIHandler):
 
-    def __init__(self, file, prompt, print_context, **kwargs):
+    def __init__(self, file_path, prompt, print_context, **kwargs):
         super().__init__(**kwargs)
-        self.file = file
+        self.file = file_path
         self.incorrect_test_cases_created = 0
         self.prompt = prompt
         self.print_context = print_context
@@ -63,7 +63,7 @@ class TestCodeAIHandler(LogCollector, AIHandler):
         return {"role": "user",
                 "content": previous_code + "\nGiven the following textual description of the test case, provide a minimal test case:\n"+
                            ("Use " if previous_code == "" else "Keep the existing tests and add one by using ") +
-                           "the Assertion First pattern in TDD and stub and drivers to develop the first barely minimal test and production code for the feature " + self.prompt + " Do not provide a solution for other input classes. \n\nAssume that the class will be written in the same file!"}
+                           "the Assertion First pattern in TDD to develop the first barely minimal test and production code for the feature: " + self.prompt + " Do not provide a solution for other input classes. \n\nAssume that the class will be written in the same file!"}
 
 
     def clean_code(self):
@@ -107,7 +107,7 @@ class TestCodeAIHandler(LogCollector, AIHandler):
         code = self.clean_code()
         old_code = extract_classes_from_file(self.file)
         path = self.logs_folder + "/" + self.get_base_filename_for_context() + ".py"
-        reshuffled_code = old_code[0] + reshuffle_code(code, self.logs_folder + "/" + self.get_last_test_case_path(), keep_production_code=False)
+        reshuffled_code = ("" if len(old_code) == 0 else old_code[0]) + reshuffle_code(code, self.logs_folder + "/" + self.get_last_test_case_path(), keep_production_code=False)
 
         self.save2file(reshuffled_code, path)
         self.save2file(reshuffled_code, self.file)
@@ -116,7 +116,6 @@ class TestCodeAIHandler(LogCollector, AIHandler):
         print(self.file + ", was updated with the next test code.")
 
     def generate_production_code(self):
-        print(self.file)
 
         result_sub_process = subprocess.run(
             ["python", "CollaborativeTDDRunner.py", "--file", self.file],

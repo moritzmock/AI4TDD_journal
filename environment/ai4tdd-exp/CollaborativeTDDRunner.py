@@ -24,13 +24,13 @@ class CollaborativeTDDRunner():
             full_context=full_context,
             print_context=print_context,
             print_message=print_message,
-            file=file,
+            file_path=file,
             generic_prompt=generic_prompt,
             logs_folder=logs_folder,
             python_version=python_version
         )
         self.max_number_repetitions = max_number_repetitions
-        self.skip = how_many_to_skip(file) + 1
+        self.skip = how_many_to_skip(file, log_path=logs_folder, multiplier=1) + 1
 
     def run(self):
         self.handler.execute_tests(None)

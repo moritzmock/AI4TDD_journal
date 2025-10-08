@@ -12,6 +12,7 @@ Key functionality:
 import sys
 sys.path.append("..")
 from utils import reshuffle_code
+from utils import how_many_to_skip
 from LogCollector import LogCollector
 from AIHandler import AIHandler
 
@@ -25,9 +26,9 @@ def get_next_filename(filename, idx):
 
 
 class DeveloperAIHandler(LogCollector, AIHandler):
-    def __init__(self, full_context, print_context, file, generic_prompt, **kwargs):
+    def __init__(self, full_context, print_context, file_path, generic_prompt, **kwargs):
         super().__init__(**kwargs)
-        self.current_test_file = file
+        self.current_test_file = file_path
         self.full_context = full_context
         self.print_context = print_context
         self.generic_prompt = generic_prompt
@@ -43,6 +44,10 @@ class DeveloperAIHandler(LogCollector, AIHandler):
 
         return test_and_trace + "\n\n" + self.generic_prompt
 
+    def get_last_test_case_number(self):
+        return how_many_to_skip("{}/test_case.py".format(self.logs_folder), multiplier=1)
+
+
     def send_message(self, idx):
         context = self.create_context()
         next_message = self.get_next_message(idx)
@@ -57,9 +62,7 @@ class DeveloperAIHandler(LogCollector, AIHandler):
                ]
 
         filename = self.current_test_file
-
         path = self.get_path(filename, idx, "txt").replace(".txt", "_context_developer.txt")
-
         self.save_context(context, path)
 
         if self.print_context:
@@ -124,10 +127,11 @@ class DeveloperAIHandler(LogCollector, AIHandler):
     def execute_tests(self, idx):
         path = self.get_path(self.current_test_file, idx)
         path = path if idx is not None else self.current_test_file
-        print(path)
         result_sub_process = self.execute_python_file(file_path=path)
-        print(result_sub_process[1])
-        if "OK" not in result_sub_process[1].split("\n")[-2]:
+        if result_sub_process[1] == "":
+            print("process stopped! Missing main!")
+            quit()
+        elif "OK" not in result_sub_process[1].split("\n")[-2]:
             self.errors.append([result_sub_process[1]])
         else:
             self.errors.append(TEST_PASSED)

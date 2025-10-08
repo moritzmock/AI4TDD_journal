@@ -16,7 +16,7 @@ class LogRunner():
         self.collector = LogCollector(
             python_version=python_version,
             logs_folder=logs_folder,
-            file=file
+            file_path=file
         )
 
     def writeFile(self, data, index, type, path_prefix):

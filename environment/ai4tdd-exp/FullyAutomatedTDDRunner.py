@@ -22,7 +22,7 @@ class FullyAutomatedTDDRunner():
             role="You are part of a Test Driven Development team. Your role is the tester, create out of a textual description a test case using the library 'unittest'.",
             print_context=print_context,
             print_message=print_message,
-            file=file,
+            file_path=file,
             prompt=prompt,
             logs_folder=logs_folder,
             python_version=python_version
