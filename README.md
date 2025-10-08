@@ -1,6 +1,6 @@
 This is the repository for the Python toolset used in the paper:
 
-*Title*: Exploring AI-Developer Interactions in Software Development: A Case Study with Test-Driven Development
+*Title*: Vibe Coding vs. Agentic Coding: A Case Study with Test-Driven Development
 
 *Authors*: Moritz Mock and Barbara Russo
 
@@ -10,7 +10,7 @@ The repository contains the following folders:
 
 - [environment](environment) - Contains the code to conduct the experiments, a detailed description can be found below.
 - [experiments](experiments) - Contains the submitted code of the participants as well as the collected logs.
-  - [evaluation](experiments/evaluation) - Contains the code which is used for the evaluation of the submitted production code of all the observations (P1-P16 and F1).
+  - [evaluation](experiments/evaluation) - Contains the code which is used for the evaluation of the submitted production code of all the observations (P1-P16, FA (1-3), and the magnetic executions (folder MGX)).
 - [questionnaires](questionnaires) - Contains the questionnaires which we leveraged for collecting the demographics before the experiment and the feedback after the experiment from the 16 participants.
 - [responses](responses) - Contains the responses from the 16 participants.
 
