@@ -41,6 +41,7 @@ def load_text_formatter(relative_path, module_name):
 
     return module.TextFormatter
 
+'''
 F1 = load_text_formatter('F1/test_case_4_4.py', 'test_case_4_4')
 P1 = load_text_formatter('P1/experiment.py', 'experiment')
 P2 = load_text_formatter('P2/testePython/experiment.py', 'experiment')
@@ -58,7 +59,32 @@ P13 = load_text_formatter('P13/P13/experiment.py', 'experiment')
 P14 = load_text_formatter('P14/P14/experiment_8_5.py', 'experiment')
 P15 = load_text_formatter('P15/P15/experiment.py', 'experiment')
 P16 = load_text_formatter('P16/P16/experiment.py', 'experiment')
+'''
+# test_MPX = load_text_formatter("test_MPX/text_formatter.py", "text_formatter")
 
+# test_GPT = load_text_formatter("test_GPT_5/text_formatter.py", "text_formatter")
+
+case_1_1 = load_text_formatter("MGX/case_1_1/text_formatter.py", "text_formatter")
+case_1_2 = load_text_formatter("MGX/case_1_2/text_formatter.py", "text_formatter")
+case_1_3 = load_text_formatter("MGX/case_1_3/text_formatter.py", "text_formatter")
+
+case_2_1 = load_text_formatter("MGX_new/case_2_1/text_formatter_test.py", "text_formatter")
+case_2_2 = load_text_formatter("MGX_new/case_2_2/text_formatter_test.py", "text_formatter")
+case_2_3 = load_text_formatter("MGX_new/case_2_3/text_formatter_test.py", "text_formatter")
+
+case_3_1 = load_text_formatter("MGX/case_3_1/text_formatter.py", "text_formatter")
+case_3_2 = load_text_formatter("MGX/case_3_2/text_formatter.py", "text_formatter")
+case_3_3 = load_text_formatter("MGX/case_3_3/text_formatter.py", "text_formatter")
+case_3_4 = load_text_formatter("MGX_new/case_3_4/test_text_formatter.py", "text_formatter")
+case_3_5 = load_text_formatter("MGX_new/case_3_5/test_text_formatter.py", "text_formatter")
+case_3_6 = load_text_formatter("MGX_new/case_3_6/test_text_formatter.py", "text_formatter")
+
+case_again = load_text_formatter("MGX_again/test_text_formatter.py", "text_formatter")
+
+
+case_F1_1 = load_text_formatter("../environment/ai4tdd-exp/working_F1_1/F1_1/experiment.py", "experiment")
+case_F1_2 = load_text_formatter("../environment/ai4tdd-exp/working_F1_2/F1_2/experiment.py", "experiment")
+case_F1_3 = load_text_formatter("../environment/ai4tdd-exp/working_F1_3/experiment.py", "experiment")
 
 class TextFormatter:
     def setLineWidth(self, length):
@@ -252,5 +278,121 @@ if __name__ == "__main__":
     #for cls in test_classes:
     #    suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
+    '''
+    # test_MPX
+    test_classes = generate_tests("test_MPX", test_MPX, generateMethods("centerSingleWord", "centerTwoWords", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+    
+
+    # test case_1_1
+    test_classes = generate_tests("case_1_1", case_1_1, generateMethods("center", "center_two", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+    
+
+    # test case_1_2
+    test_classes = generate_tests("case_1_2", case_1_2,
+                                  generateMethods("centerWord", "centerTwoWords", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+    
+
+    # test case_1_3
+    test_classes = generate_tests("case_1_3", case_1_3,
+                                  generateMethods("center_single", "center_two", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+
+    
+    
+    # test case_F1_1
+    test_classes = generate_tests("case_F1_1", case_F1_1,
+                                  generateMethods("center", "center_two_words", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+        
+    # test case_F1_2
+    test_classes = generate_tests("case_F1_2", case_F1_2,
+                                  generateMethods("centerWord", "centerWords", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+    
+    '''
+    # test case_F1_3
+    test_classes = generate_tests("case_F1_3", case_F1_3,
+                                  generateMethods("centerWord", "centerTwoWords", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+    '''
+    # test case_2_1
+    test_classes = generate_tests("case_2_1", case_2_1,
+                                  generateMethods("center", "center_two_words", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+    
+    
+    # test case_2_3
+    test_classes = generate_tests("case_2_3", case_2_3,
+                                  generateMethods("center_word", "center_two_words", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+    
+    # test case_3_1
+    test_classes = generate_tests("case_3_1", case_3_1,
+                                  generateMethods("center_single_word", "center_two_words", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+    
+
+    # test case_3_2
+    test_classes = generate_tests("case_3_2", case_3_2,
+                                  generateMethods("centerSingleWord", "centerTwoWords", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+
+    
+    # test case_3_3
+    test_classes = generate_tests("case_3_3", case_3_3,
+                                  generateMethods("center_single_word", "center_two_words", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+
+    
+    # test case_3_4
+    test_classes = generate_tests("case_3_4", case_3_4,
+                                  generateMethods("centerWord", "centerTwoWords", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+    
+    
+    # test case_3_5_1
+    test_classes = generate_tests("case_3_4", case_3_4,
+                                  generateMethods("center_single_word", "center_two_words", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+    
+    # test case_3_5_1
+    test_classes = generate_tests("case_3_5", case_3_5,
+                                  generateMethods("center_single_word", "center_two_words", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+        
+
+    # test case_3_6
+    test_classes = generate_tests("case_3_6", case_3_6,
+                                  generateMethods("format_single_word", "format_two_words", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+
+    
+
+
+    # test case_again
+    test_classes = generate_tests("case_again", case_again,
+                                  generateMethods("center_single_word", "center_two_words", "setLineWidth", False))
+    for cls in test_classes:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+    '''
     runner = unittest.TextTestRunner(verbosity=2)
     runner.run(suite)
