@@ -12,6 +12,7 @@ The repository contains the following folders:
 - [experiments](experiments) - Contains the submitted code of the participants as well as the collected logs.
   - [evaluation](experiments/evaluation) - Contains the code which is used for the evaluation of the submitted production code of all the observations (P1-P16 and F1).
 - [questionnaires](questionnaires) - Contains the questionnaires which we leveraged for collecting the demographics before the experiment and the feedback after the experiment from the 16 participants.
+- [responses](responses) - Contains the responses from the 16 participants.
 
 ## environment
 
