@@ -73,9 +73,9 @@ case_3_1 = load_text_formatter("MGX/case_3_1/text_formatter.py", "text_formatter
 case_3_2 = load_text_formatter("MGX/case_3_2/text_formatter.py", "text_formatter")
 case_3_3 = load_text_formatter("MGX/case_3_3/text_formatter.py", "text_formatter")
 
-case_3_4 = load_text_formatter("MGX/case_3_4/test_text_formatter.py", "text_formatter")
-case_3_5 = load_text_formatter("MGX/case_3_5/test_text_formatter.py", "text_formatter")
-case_3_6 = load_text_formatter("MGX/case_3_6/test_text_formatter.py", "text_formatter")
+case_4_1 = load_text_formatter("MGX/case_4_1/test_text_formatter.py", "text_formatter")
+case_4_2 = load_text_formatter("MGX/case_4_2/test_text_formatter.py", "text_formatter")
+case_4_3 = load_text_formatter("MGX/case_4_3/test_text_formatter.py", "text_formatter")
 
 case_again = load_text_formatter("MGX_again/test_text_formatter.py", "text_formatter")
 
@@ -352,28 +352,22 @@ if __name__ == "__main__":
         suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
 
     
-    # test case_3_4
-    test_classes = generate_tests("case_3_4", case_3_4,
+    # test case_4_1
+    test_classes = generate_tests("case_4_1", case_4_1,
                                   testcase_to_be_generated("centerWord", "centerTwoWords", "setLineWidth", False))
     for cls in test_classes:
         suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
+
     
-    
-    # test case_3_5_1
-    test_classes = generate_tests("case_3_4", case_3_4,
-                                  testcase_to_be_generated("center_single_word", "center_two_words", "setLineWidth", False))
-    for cls in test_classes:
-        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
-    
-    # test case_3_5_1
-    test_classes = generate_tests("case_3_5", case_3_5,
+    # test case_4_2
+    test_classes = generate_tests("case_4_2", case_4_2,
                                   testcase_to_be_generated("center_single_word", "center_two_words", "setLineWidth", False))
     for cls in test_classes:
         suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
         
 
-    # test case_3_6
-    test_classes = generate_tests("case_3_6", case_3_6,
+    # test case_4_3
+    test_classes = generate_tests("case_4_3", case_4_3,
                                   testcase_to_be_generated("format_single_word", "format_two_words", "setLineWidth", False))
     for cls in test_classes:
         suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(cls))
