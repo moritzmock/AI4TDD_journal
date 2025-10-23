@@ -1,6 +1,6 @@
 This is the repository for the Python toolset used in the paper:
 
-*Title*: Vibe Coding vs. Agentic Coding: A Case Study with Test-Driven Development
+*Title*: Vibe Coding: A Case Study with Test-Driven Development
 
 *Authors*: Moritz Mock and Barbara Russo
 
